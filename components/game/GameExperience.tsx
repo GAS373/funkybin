@@ -9,11 +9,11 @@ import { defaultProgress, loadProgress, resetProgress, saveProgress } from "@/li
 import type { DistrictId, GameProgress } from "@/lib/game/types";
 
 const cityNodePositions: Record<DistrictId, { top: string; left: string }> = {
-  docs: { top: "62%", left: "18%" },
-  debug: { top: "38%", left: "34%" },
-  sql: { top: "58%", left: "50%" },
-  regex: { top: "34%", left: "68%" },
-  commit: { top: "60%", left: "82%" },
+  docs: { top: "40%", left: "20%" },
+  debug: { top: "24%", left: "38%" },
+  sql: { top: "44%", left: "64%" },
+  regex: { top: "14%", left: "72%" },
+  commit: { top: "56%", left: "84%" },
 };
 
 export function GameExperience() {
@@ -137,7 +137,6 @@ export function GameExperience() {
                 <span>Escape From Hallucination City</span>
               </div>
             </div>
-            <div className="ghost-chip">Cloudflare-ready. Static-first. Local progress only.</div>
           </div>
 
           <div className="hero-grid">
@@ -149,7 +148,8 @@ export function GameExperience() {
             >
               <div className="eyebrow">Hallucination outbreak detected</div>
               <h1>
-                Restore the city. <span>Validate the machine.</span>
+                <span className="hero-line">Restore the city.</span>
+                <span className="hero-line hero-line-accent">Validate the machine.</span>
               </h1>
               <p className="lede">
                 Escape From Hallucination City is a free AI hallucination game that teaches prompt
