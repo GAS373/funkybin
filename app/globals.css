@@ -114,7 +114,7 @@ select {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.14fr 0.86fr;
   gap: 28px;
   align-items: stretch;
 }
@@ -213,9 +213,9 @@ select {
 .hero h1 {
   margin: 18px 0 18px;
   max-width: none;
-  font-size: clamp(2.2rem, 5.2vw, 4.2rem);
-  line-height: 0.94;
-  letter-spacing: -0.05em;
+  font-size: clamp(1.9rem, 4vw, 3.45rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
 }
 
 .hero-line {
@@ -423,12 +423,12 @@ select {
   top: 28px;
   left: 28px;
   z-index: 2;
-  max-width: min(360px, calc(100% - 320px));
+  max-width: min(320px, calc(100% - 340px));
 }
 
 .city-label h2 {
   margin: 12px 0 10px;
-  font-size: clamp(2rem, 3vw, 3.6rem);
+  font-size: clamp(1.9rem, 2.6vw, 3.1rem);
   line-height: 0.98;
   letter-spacing: -0.04em;
 }
@@ -444,14 +444,14 @@ select {
 
 .hallucination-banner {
   position: absolute;
-  right: 24px;
-  top: 24px;
+  right: 20px;
+  top: 32px;
   z-index: 3;
   padding: 12px 14px;
   border-radius: 16px;
   border: 1px solid rgba(255, 91, 134, 0.28);
   background: rgba(43, 10, 20, 0.78);
-  max-width: 240px;
+  width: 228px;
   box-shadow: 0 0 30px rgba(255, 91, 134, 0.1);
 }
 
@@ -1104,11 +1104,11 @@ select {
 
   .hero h1 {
     margin: 14px 0;
-    font-size: clamp(2.1rem, 4.4vw, 3.7rem);
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
   }
 
   .city-label {
-    max-width: min(320px, calc(100% - 300px));
+    max-width: min(280px, calc(100% - 300px));
   }
 
   .lede {
