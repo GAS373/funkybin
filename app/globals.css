@@ -212,13 +212,18 @@ select {
 
 .hero h1 {
   margin: 18px 0 18px;
-  max-width: 9ch;
+  max-width: none;
   font-size: clamp(2.2rem, 5.2vw, 4.2rem);
   line-height: 0.94;
   letter-spacing: -0.05em;
 }
 
-.hero h1 span {
+.hero-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-line-accent {
   color: var(--accent);
   text-shadow: 0 0 24px rgba(83, 224, 255, 0.28);
 }
@@ -417,7 +422,8 @@ select {
   position: absolute;
   top: 28px;
   left: 28px;
-  max-width: 280px;
+  z-index: 2;
+  max-width: min(360px, calc(100% - 320px));
 }
 
 .city-label h2 {
@@ -440,6 +446,7 @@ select {
   position: absolute;
   right: 24px;
   top: 24px;
+  z-index: 3;
   padding: 12px 14px;
   border-radius: 16px;
   border: 1px solid rgba(255, 91, 134, 0.28);
@@ -1100,6 +1107,10 @@ select {
     font-size: clamp(2.1rem, 4.4vw, 3.7rem);
   }
 
+  .city-label {
+    max-width: min(320px, calc(100% - 300px));
+  }
+
   .lede {
     font-size: 16px;
     line-height: 1.55;
@@ -1187,9 +1198,12 @@ select {
 
   .hero h1 {
     margin: 12px 0 14px;
-    max-width: 8ch;
-    font-size: clamp(1.9rem, 11.5vw, 3.2rem);
+    font-size: clamp(1.65rem, 9.8vw, 2.8rem);
     line-height: 0.95;
+  }
+
+  .hero-line {
+    white-space: normal;
   }
 
   .lede {

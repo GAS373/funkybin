@@ -149,7 +149,8 @@ export function GameExperience() {
             >
               <div className="eyebrow">Hallucination outbreak detected</div>
               <h1>
-                Restore the city. <span>Validate the machine.</span>
+                <span className="hero-line">Restore the city.</span>
+                <span className="hero-line hero-line-accent">Validate the machine.</span>
               </h1>
               <p className="lede">
                 Escape From Hallucination City is a free AI hallucination game that teaches prompt
