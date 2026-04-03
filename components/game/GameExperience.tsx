@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 import { districtMap, districtOrder, districtScenes } from "@/lib/game/data";
+import { seoFaqs, seoHighlights } from "@/lib/seo";
 import { defaultProgress, loadProgress, resetProgress, saveProgress } from "@/lib/game/storage";
 import type { DistrictId, GameProgress } from "@/lib/game/types";
 
@@ -151,8 +152,9 @@ export function GameExperience() {
                 Restore the city. <span>Validate the machine.</span>
               </h1>
               <p className="lede">
-                A confident AI is flooding the city with wrong answers. Move through docs, debugging,
-                SQL, regex, and commit systems. Catch the hallucination before it ships.
+                Escape From Hallucination City is a free AI hallucination game that teaches prompt
+                validation across docs, debugging, SQL, regex, and commit workflows before bad answers
+                reach production.
               </p>
               <div className="button-row">
                 <button className="button-primary" onClick={startMission}>
@@ -255,6 +257,29 @@ export function GameExperience() {
                 <div className="skyline" />
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-tight" id="ai-validation-game">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="eyebrow">AI Validation Game</div>
+              <h2 className="section-title">Learn how to catch AI hallucinations before they ship.</h2>
+            </div>
+            <p className="section-copy">
+              This browser-based developer education game teaches prompt validation and AI output review through five practical districts that mirror real engineering work.
+            </p>
+          </div>
+
+          <div className="seo-grid">
+            {seoHighlights.map((item) => (
+              <article className="seo-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -520,6 +545,29 @@ export function GameExperience() {
                 Jump To District Map
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="faq">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <div className="eyebrow">FAQ</div>
+              <h2 className="section-title">Questions about AI hallucinations, prompt validation, and gameplay.</h2>
+            </div>
+            <p className="summary-copy">
+              These answers are written for users searching for an AI validation game, prompt validation practice, and hands-on ways to learn safer AI usage.
+            </p>
+          </div>
+
+          <div className="faq-grid">
+            {seoFaqs.map((item) => (
+              <article className="faq-item" key={item.question}>
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

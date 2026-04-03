@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import { GAME_NAME, SEO_DESCRIPTION, SEO_TITLE, SITE_NAME, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -14,23 +15,69 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Escape From Hallucination City | funkybin.dev",
-  description:
-    "A one-page sci-fi learning game about validating AI answers before you trust them.",
-  metadataBase: new URL("https://funkybin.dev"),
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SEO_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SEO_DESCRIPTION,
+  applicationName: GAME_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  keywords: [
+    "AI hallucination game",
+    "prompt validation game",
+    "AI validation training",
+    "learn prompt validation",
+    "catch AI hallucinations",
+    "developer education game",
+    "AI debugging practice",
+    "SQL validation practice",
+    "regex testing practice",
+    "commit message practice",
+  ],
+  category: "education",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
   openGraph: {
-    title: "Escape From Hallucination City | funkybin.dev",
-    description:
-      "Restore a broken AI city by catching hallucinations in docs, debugging, SQL, regex, and commit workflows.",
-    url: "https://funkybin.dev",
-    siteName: "funkybin.dev",
+    title: `${GAME_NAME} | AI Hallucination Game`,
+    description: SEO_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${GAME_NAME} social preview`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Escape From Hallucination City",
-    description:
-      "Learn how to validate AI output through a one-page sci-fi game.",
+    title: `${GAME_NAME} | AI Hallucination Game`,
+    description: SEO_DESCRIPTION,
+    images: ["/twitter-image"],
   },
 };
 
