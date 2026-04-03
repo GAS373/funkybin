@@ -212,9 +212,9 @@ select {
 
 .hero h1 {
   margin: 18px 0 18px;
-  max-width: 10ch;
-  font-size: clamp(3rem, 8vw, 6.4rem);
-  line-height: 0.96;
+  max-width: 9ch;
+  font-size: clamp(2.2rem, 5.2vw, 4.2rem);
+  line-height: 0.94;
   letter-spacing: -0.05em;
 }
 
@@ -225,8 +225,8 @@ select {
 
 .lede {
   max-width: 60ch;
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.62;
   color: #c3d9e9;
 }
 
@@ -594,6 +594,48 @@ select {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
+}
+
+.section-tight {
+  padding-top: 0;
+}
+
+.seo-grid,
+.faq-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.seo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.seo-card,
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  padding: 22px;
+}
+
+.seo-card h3,
+.faq-item h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+
+.seo-card p,
+.faq-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .district-card {
@@ -1036,11 +1078,69 @@ select {
   color: var(--text);
 }
 
+@media (max-height: 820px) and (min-width: 1081px) {
+  .hero {
+    padding: 24px 0 56px;
+  }
+
+  .brand-row {
+    padding: 6px 0 20px;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
+  .hero-card {
+    padding: 26px;
+  }
+
+  .hero h1 {
+    margin: 14px 0;
+    font-size: clamp(2.1rem, 4.4vw, 3.7rem);
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .button-row,
+  .status-grid,
+  .route-strip {
+    margin-top: 18px;
+  }
+
+  .status-grid,
+  .route-strip {
+    gap: 10px;
+  }
+
+  .route-stop {
+    padding: 12px;
+  }
+
+  .city-view {
+    min-height: 400px;
+  }
+
+  .city-label h2 {
+    font-size: clamp(1.8rem, 2.6vw, 3rem);
+  }
+
+  .hallucination-banner,
+  .city-status-panel {
+    padding: 10px 12px;
+  }
+}
+
 @media (max-width: 1080px) {
   .hero-grid,
   .game-grid,
   .summary-grid,
-  .map-grid {
+  .map-grid,
+  .seo-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1068,7 +1168,7 @@ select {
   }
 
   .hero {
-    padding-bottom: 64px;
+    padding: 18px 0 48px;
   }
 
   .hero-card,
@@ -1076,8 +1176,25 @@ select {
   .summary-card,
   .district-card,
   .footer-cta {
-    padding: 18px;
+    padding: 16px;
     border-radius: 20px;
+  }
+
+  .ghost-chip {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    margin: 12px 0 14px;
+    max-width: 8ch;
+    font-size: clamp(1.9rem, 11.5vw, 3.2rem);
+    line-height: 0.95;
+  }
+
+  .lede {
+    font-size: 15px;
+    line-height: 1.5;
   }
 
   .brand-row,
@@ -1087,9 +1204,40 @@ select {
     gap: 16px;
   }
 
+  .brand-row {
+    padding: 4px 0 18px;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .brand-copy strong {
+    font-size: 15px;
+  }
+
+  .brand-copy span {
+    font-size: 12px;
+  }
+
   .button-row {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .button-primary,
+  .button-secondary,
+  .map-jump {
+    min-height: 46px;
+    border-radius: 14px;
   }
 
   .city-label,
@@ -1097,7 +1245,7 @@ select {
   .city-status-panel {
     position: static;
     max-width: none;
-    margin: 18px;
+    margin: 14px;
   }
 
   .city-network {
@@ -1105,7 +1253,7 @@ select {
     inset: auto;
     display: grid;
     gap: 10px;
-    padding: 0 18px 18px;
+    padding: 0 14px 14px;
   }
 
   .city-network::before {
@@ -1124,5 +1272,18 @@ select {
 
   .route-strip {
     grid-template-columns: 1fr;
+  }
+
+  .route-stop,
+  .status-tile {
+    padding: 12px;
+  }
+
+  .city-view {
+    min-height: 0;
+  }
+
+  .section {
+    padding: 0 0 56px;
   }
 }
